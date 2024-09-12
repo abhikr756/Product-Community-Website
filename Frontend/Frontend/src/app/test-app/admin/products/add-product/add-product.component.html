@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="box">
+            <div class="container-lg d-flex align-items-center justify-content-center mt-5">
+              <form class="example-form" (submit)="addProduct(addPostForm)" #addPostForm="ngForm">
+                <div class="form-group">
+                  <label style="font-weight: bold;" for="productName">Product Name</label>
+                  <input type="text" class="form-control" placeholder="Name" ngModel required
+                    name="productName">
+                </div>
+
+                <div class="form-group">
+                  <label style="font-weight: bold;" for="brand">Product Brand</label>
+                  <input type="text" class="form-control" placeholder=" Brand" ngModel required name="brand">
+                </div>
+
+                <div class="form-group">
+                  <label style="font-weight: bold;" for="productCode">Product Code</label>
+                  <input type="text" class="form-control" placeholder="Code" ngModel required
+                    name="productCode">
+                  <div *ngIf="errorMessage" class="text-danger">
+                    Product code should be unique.
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label style="font-weight: bold;" for="prodPrice">Product Price</label>
+                  <input type="text" class="form-control" placeholder="Price" ngModel required name="prodPrice">
+                </div>
+                <br>
+                <div class="example-button-row">
+                  <button mat-raised-button type="reset" color="warn" routerLink="/admin/products">
+                    <mat-icon>cancel</mat-icon> Cancel
+                  </button>
+                  <button mat-raised-button type="submit" color="primary" [disabled]="addPostForm.invalid">
+                    <mat-icon>add</mat-icon> Add Product
+                  </button>
+                </div>
+                <!-- Error message for duplicate product code -->
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+/* Sidebar */
+
+.sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+  max-height: 500px; /* Adjust the maximum height as per your requirement */
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.sidebar h3 {
+  color: #5b1111;
+  transition: color 0.3s ease;
+}
+
+.sidebar:hover h3 {
+  color: #901a1a;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar li:hover {
+  transform: translateX(5px);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #901a1a;
+}
+
+/* Product title animation */
+.product-title:hover {
+  animation: colorChange 1s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #ff0000;
+  }
+  100% {
+    color: white;
+  }
+}
+
+/* Welcome text animation */
+.welcome-text {
+  font-size: 1.3rem;
+  color: white;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.welcome-text:hover {
+  transform: scale(1.1);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* List item */
+mat-list-item {
+  margin-bottom: 30px;
+  width: 220px;
+  transition: transform 0.3s ease;
+}
+
+mat-list-item:hover {
+  transform: translateX(5px);
+}
+
+/* Button hovering effects */
+mat-icon-button:hover {
+  transform: rotate(180deg);
+}
+
+mat-button:hover {
+  transform: scale(1.1);
+  background-color: #ff5e5e;
+  color: white;
+  border-color: #ff5e5e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-button:hover mat-icon {
+  transform: rotate(360deg);
+}
+
+mat-button mat-icon {
+  transition: transform 0.3s ease;
+}
+.hover-effect {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.hover-effect:hover {
+  background-color: lightgray;
+  color: black;
+}
+.fa-box:hover {
+  color: #ff0000;
+  transform: scale(1.1);
+}
+
+.fa-users:hover {
+  color: #ff0000;
+  transform: scale(1.1);
+}
+
+.fa-star:hover {
+  color: #ff0000;
+  transform: scale(1.1);
+}
+
+
+

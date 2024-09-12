@@ -1,0 +1,28 @@
+<div class="mt-2 addProduct" style="float: right;">
+  <button mat-raised-button color="primary" routerLink="/admin/addProduct">
+    <mat-icon>add</mat-icon> Add Product
+  </button>
+</div>
+
+<br><br><br>
+
+<div class="card-container">
+  <div class="card" *ngFor="let p of products; let i=index" [style.animationDelay]="i * 0.1 + 's'">
+    <div class="card-inner">
+      <div class="card-header">
+        <h3>{{ p.productName }}</h3>
+        <p>{{ p.brand }}</p>
+      </div>
+      <div class="card-body">
+        <p data-hover="Product ID">Product ID: {{ p.productId }}</p>
+        <p data-hover="Product Code">Product Code: {{ p.productCode }}</p>
+        <p data-hover="Product Price">Product Price: {{ p.prodPrice }}</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-danger" color="warn" (click)="deleteProduct(p.productId)">
+          <i class="fas fa-trash"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

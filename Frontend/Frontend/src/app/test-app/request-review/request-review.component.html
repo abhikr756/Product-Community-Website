@@ -1,0 +1,61 @@
+<div class="header py-4" style="background-color: black; color: white; padding: 2rem;">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 text-left">
+        <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
+      </div>
+      <div class="col-6 text-right">
+        <div *ngIf="loggedIn()">
+          <button class="btn btn-info" type="button" (click)="logout()">LOGOUT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<b>
+  <h1 class="text-center" style="font-size: 2rem; font-weight: bold;">Request for Review</h1>
+</b>
+
+<div class="container">
+  <div class="row justify-content-center py-4">
+    <div *ngIf="rt == 0" class="col-md-5">
+      <form class="example-form" (submit)="requestReview(addPostForm)" #addPostForm="ngForm">
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" id="productName" placeholder="Product Name" ngModel required name="productName">
+        </div>
+
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input type="text" class="form-control" id="brand" placeholder="Product Brand" ngModel required name="brand">
+        </div>
+
+        <div class="form-group">
+          <label for="productCode">Product Code</label>
+          <input type="text" class="form-control" id="productCode" placeholder="Product Code" ngModel required name="productCode">
+        </div>
+
+        <div class="example-button-row text-center">
+         
+          <button type="reset" class="btn btn-danger" routerLink="/searchProduct">Cancel</button>
+          <button type="submit" class="btn btn-primary">Request for Review</button>
+
+        </div>
+        
+      </form>
+    </div>
+
+    <div *ngIf="rt == 1" class="col-md-6">
+      <div class="centered" *ngIf="noProductError">
+        <h1 class="text-center" style="font-size: 2rem; font-weight: bold;">Your request is sent for review</h1>
+      </div>
+      <div class="centered" *ngIf="productExistsError">
+        <h1 class="text-center" style="font-size: 2rem; font-weight: bold;">Review is already added for this product</h1>
+      
+      </div>
+   
+      
+    </div>
+  </div>
+</div>

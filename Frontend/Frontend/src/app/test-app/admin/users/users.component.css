@@ -1,0 +1,150 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    justify-content: center;
+  }
+  .user-table {
+    width: 100%;
+    margin: 50px auto;
+  }
+  
+  .user-table th,
+  .user-table td {
+    text-align: center;
+  }
+  .table th,
+  .table td {
+    padding: 20px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .table th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2ffeb;
+  }
+  
+  .table tr:nth-child(odd) {
+    background-color: #b7ffb4;
+  }
+  
+  .table tr:hover {
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease;
+  }
+  
+  .active {
+    background-color: #5cb85c;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .non-active {
+    background-color: #d9534f;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .active:hover,
+  .non-active:hover {
+    background-color: #333;
+  }
+  
+  .user-row {
+    animation: rowFade 0.5s ease-in-out forwards;
+    opacity: 1;
+  }
+  
+  @keyframes rowFade {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Additional styling for a beautiful table */
+  .table {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th {
+    text-transform: uppercase;
+  }
+  
+  .table td {
+    color: #333;
+  }
+  
+  .active,
+  .non-active {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .active:hover,
+  .non-active:hover {
+    background-color: #018314;
+    color: white;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Account Authority Styles */
+  .admin-authority {
+    color: #ffffff;
+    background-color: #5b1111;
+  }
+  
+  .normal-authority {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  /* Updated Hover Styles */
+  .admin-authority:hover {
+    background-color: #901a1a;
+  }
+  
+  .normal-authority:hover {
+    background-color: #ebebeb;
+  }
+  
+  /* Advanced Hover Effects */
+  .user-row:hover .admin-authority,
+  .user-row:hover .normal-authority {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .user-row:hover td:not(.active):not(.non-active) {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  

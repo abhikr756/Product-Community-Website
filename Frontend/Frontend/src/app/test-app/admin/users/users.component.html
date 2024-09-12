@@ -1,0 +1,19 @@
+<table class="table table-striped user-table fade-in" style="margin-right: 300px; margin-top: 50px;">
+    <tr>
+      <th>UserName</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Authority</th>
+      <th>Account Status</th>
+    </tr>
+    <tr *ngFor="let u of users" class="user-row">
+      <td>{{ u.email }}</td>
+      <td>{{ u.firstName }}</td>
+      <td>{{ u.lastName }}</td>
+      <td [ngClass]="{ 'admin-authority': u.authorities[0].authority === 'Admin', 'normal-authority': u.authorities[0].authority === 'Normal' }">{{ u.authorities[0].authority }}</td>
+      <td [ngClass]="{ active: u.enabled, 'non-active': !u.enabled }" (click)="userChange(u)" style="cursor: pointer;">
+        {{ u.enabled ? 'Active' : 'Non-Active' }}
+      </td>
+    </tr>
+  </table>
+  

@@ -1,0 +1,318 @@
+/* Button and link spacing */
+.example-button-row button,
+.example-button-row a {
+  margin-right: 28px;
+}
+
+/* Mat-toolbar */
+mat-toolbar {
+  position: relative; /* Add position relative for the hovering effect */
+}
+
+mat-toolbar a {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+mat-toolbar a:hover {
+  color: rgba(255, 255, 255, 0.7); /* Change the color on hover */
+}
+
+mat-toolbar button {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+mat-toolbar button:hover {
+  transform: scale(1.2); /* Add scaling effect on hover */
+}
+
+element.style {
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  width: fit-content;
+  background-color: #000000;
+}
+
+/* Form */
+.example-form {
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* New user */
+.newUser {
+  margin-top: 20px;
+}
+
+/* Full width input */
+.example-full-width {
+  width: 100%;
+}
+
+/* Spacer */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Animation for container */
+.container {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for form */
+.example-form {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* OnePlus-inspired styles */
+
+.container {
+  background-image: url("https://images.pexels.com/photos/9420580/pexels-photo-9420580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+}
+
+.example-form {
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 60px;
+}
+
+.example-form input[type="text"],
+.example-form input[type="password"] {
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #333333;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.example-form input[type="text"]:focus,
+.example-form input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ee0979;
+}
+
+.example-form button {
+  background-color: #374259;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.example-form button:hover {
+  background-color: #080202;
+}
+
+.example-form .newUser {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.example-form .newUser a {
+  color: #ee0979;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.example-form .newUser a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+@media screen and (max-width: 480px) {
+  .example-form {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Container */
+.container {
+
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  width: fit-content;
+  background-color: #000000;
+}
+
+/* Form */
+.example-form {
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* New user */
+.newUser {
+  margin-top: 20px;
+}
+
+/* Full width input */
+.example-full-width {
+  width: 100%;
+}
+
+/* Spacer */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Animation for container */
+.container {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for form */
+.example-form {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* OnePlus-inspired styles */
+
+.container {
+  background-image: url("https://images.pexels.com/photos/9420580/pexels-photo-9420580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+}
+
+.example-form {
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 60px;
+}
+
+.example-form input[type="text"],
+.example-form input[type="password"] {
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #333333;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.example-form input[type="text"]:focus,
+.example-form input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ee0979;
+}
+
+.example-form button {
+  background-color: #374259;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.example-form button:hover {
+  background-color: #080202;
+}
+
+.example-form .newUser {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.example-form .newUser a {
+  color: #ee0979;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.example-form .newUser a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+@media screen and (max-width: 480px) {
+  .example-form {
+    width: 100%;
+    padding: 20px;
+  }
+}

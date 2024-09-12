@@ -1,0 +1,72 @@
+<mat-toolbar style="background-color: rgb(0, 0, 0); color: white; padding: 3rem; font-weight: bold; font-size: 2rem; ">
+
+  <a>Product Community Application</a>
+
+  <span class="example-spacer"></span>
+
+  <!-- <button mat-mini-fab routerLink="/">Back</button> -->
+
+  <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
+
+</mat-toolbar>
+
+<div class="container">
+  
+  <form class="example-form" #registerForm="ngForm" (ngSubmit)="registerUser()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" [(ngModel)]="user.firstName" required name="firstName" #firstName="ngModel">
+      <mat-icon  matPrefix>perm_identity</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" [(ngModel)]="user.lastName" required name="lastName" #lastName="ngModel">
+      <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="user.email" required name="email" #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+      <div *ngIf="email.errors && (email.invalid && email.touched)">
+        <small class="text-danger" *ngIf="email.errors['required']">Email is required.</small>
+        <small class="text-danger" *ngIf="email.errors['pattern']">Invalid email format.</small>
+      </div>
+      <mat-icon matPrefix>drafts</mat-icon>
+    </mat-form-field>
+    
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="user.password" required name="password" #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$">
+      <div *ngIf="password.errors && (password.invalid && password.touched)">
+        <small class="text-danger" *ngIf="password.errors['required']">Password is required.</small>
+        <small class="text-danger" *ngIf="password.errors['pattern']">Invalid password. It should contain at least 8 characters, one uppercase letter, one lowercase letter, one digit, and one special character.</small>
+      </div>
+      <mat-icon matSuffix>key</mat-icon>
+    </mat-form-field>
+    
+    
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput type="password" ngModel required name="cpassword" #cpassword="ngModel"
+        [class.is-invalid]="cpassword.invalid && cpassword.touched">
+      <small [class.d-none]="(cpassword.value==password.value) || cpassword.untouched">Password must be same!</small>
+      <mat-icon matPrefix>https</mat-icon>
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <button class="btn btn-primary" type="submit" color="primary">Sign Up</button>
+    </div>
+
+    <div class="newUser">
+      <a routerLink="/login">Have an account already?</a>
+    </div>
+
+  </form>
+</div>

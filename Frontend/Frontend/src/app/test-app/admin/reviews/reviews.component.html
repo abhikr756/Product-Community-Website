@@ -1,0 +1,60 @@
+<div class="centered" *ngFor="let r of review">
+  <div *ngIf="!r.approved || r.approved == null">
+    <mat-card class="example-card">
+      <mat-card-title>{{ r.heading }}</mat-card-title>
+
+      <mat-toolbar style="min-height: 10px">
+        <div class="rating">
+          <div class="rating-stars">
+            <ng-container *ngFor="let item of getRatingItems(r.rating)">
+              <svg
+                class="star"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="orange"
+                  d="M12 2.693l2.69 8.282h8.72l-7.048 5.12 2.69 8.282L12 18.966l-7.348 5.44 2.69-8.282L1.59 11.975h8.72z"
+                />
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+      </mat-toolbar>
+    </mat-card>
+
+    <div class="review-box">
+      <mat-card-content style="min-height: 5px">
+        <div class="review-container">
+          <div class="review-header">
+            <p class="review-text"><b>Product Name:</b> {{ r.productName }}</p>
+            <p class="review-text"><b>Product Code:</b> {{ r.productCode }}</p>
+          </div>
+          <div class="review-content">
+            <p>
+              <b>Review:</b> {{ r.review }}
+            </p>
+          </div>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions class="review-actions">
+        <button class="btn btn-info approve-btn" (click)="approveReview(r)">
+          APPROVE
+        </button>
+
+        <button class="btn cancel-btn" (click)="cancelReview(r)">CANCEL</button>
+      </mat-card-actions>
+    </div>
+  </div>
+</div>
+
+<div class="centered" *ngIf="review.length == 0">
+  <br /><br />
+
+  <b>
+    <h1 class="text-center" style="font-size: 1.5rem; font-weight: bold">
+      All Reviews are Approved
+    </h1>
+  </b>
+</div>

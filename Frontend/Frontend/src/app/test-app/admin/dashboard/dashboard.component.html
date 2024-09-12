@@ -1,0 +1,85 @@
+<mat-toolbar style="background-color: rgb(0, 0, 0); color: white; padding: 3rem; font-weight: bold; font-size: 2rem; " >
+
+  <button (click)="drawer.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button><br><br>
+
+  <span style="text-align: center; display: block;" class="hover-effect">
+    <a routerLink="/" style="text-decoration: none; color: white; margin: 0 auto;">Product Community Application</a>
+  </span>
+  
+  <span class="example-spacer"></span>
+
+  <div *ngIf="loggedIn()">
+    <div><a class="welcome-text" style="white-space: nowrap; text-decoration: none;">Welcome, {{ currentUser() }}</a></div>
+  </div>
+  <br><br>
+
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button routerLink="/"><mat-icon>home</mat-icon>Home</button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="/admin/users"><mat-icon>person</mat-icon>Users</button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="/admin/products"><mat-icon>shopping_cart</mat-icon>Products</button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="/admin/reviews"><mat-icon>star</mat-icon>Reviews</button>
+      </mat-list-item>
+      
+      
+      <mat-list-item>
+        <span mat-button routerLink="/login" class="logout-button"><mat-icon>logout</mat-icon>Logout</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div style="text-align: center; min-height: 600px;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+  <!-- <div class="header  py-3 " style="background-color: black; color: white; padding: 2rem;">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 text-left">
+          <div class="top-left" *ngIf="loggedIn()">
+            <h1>Welcome! {{ currentUser() }}</h1>
+          </div>
+        </div>
+        <div class="col-6 text-right">
+          <div *ngIf="loggedIn()">
+            <button class="btn btn-info" type="button" (click)="logout()">LOGOUT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- 
+  <div class="content">
+    <div class="d-flex">
+      <div class="sidebar">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+        <div class="grid-container">
+          <div class="grid-item item2">
+            <div class="outlets">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+

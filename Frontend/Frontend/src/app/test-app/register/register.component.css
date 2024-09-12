@@ -1,0 +1,147 @@
+/* Button and link spacing */
+.example-button-row button,
+.example-button-row a {
+  margin-right: 28px;
+}
+
+/* Apply hover effect to the "Product Community Application" link */
+.mat-toolbar a {
+  color: white;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mat-toolbar a:hover {
+  color: #9DB2BF;
+}
+
+.mat-toolbar a::before,
+.mat-toolbar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #27374D;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.mat-toolbar a::before {
+  transform-origin: right;
+}
+
+.mat-toolbar a::after {
+  transform-origin: left;
+}
+
+.mat-toolbar a:hover::before,
+.mat-toolbar a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Apply hover effect to the home button */
+button:hover {
+  background-color: #9DB2BF;
+}
+
+/* Container */
+.container {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid #000000;
+  width: fit-content;
+}
+
+/* Form */
+.example-form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Full width input */
+.example-full-width {
+  width: 90%;
+}
+
+/* New user */
+.newUser {
+  margin-top: 20px;
+}
+
+/* Additional styles */
+.container {
+  background-image: url("https://images.pexels.com/photos/9420580/pexels-photo-9420580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+}
+
+.example-form input[type="text"],
+.example-form input[type="password"],
+.example-form input[type="email"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #000000;
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  width: 100%;
+  color: #000000;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.example-form input[type="text"]:focus,
+.example-form input[type="password"]:focus,
+.example-form input[type="email"]:focus {
+  outline: none;
+  border-color: #ee0979;
+}
+
+.example-form button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.example-form button:hover {
+  background-color: #9DB2BF;
+}
+
+.example-form .newUser {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.example-form .newUser a {
+  color: #ee0979;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.example-form .newUser a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .example-form {
+    padding: 20px;
+  }
+}

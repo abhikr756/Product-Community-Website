@@ -1,0 +1,134 @@
+<div class="body">
+  <div
+    class="header py-4"
+    style="background-color: black; color: white; padding: 3rem"
+  >
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <button
+            class="btn btn-primary"
+            color="primary"
+            routerLink="/searchProduct"
+          >
+            Back to Search
+          </button>
+        </div>
+
+        <div class="col-6 text-right">
+          <div *ngIf="loggedIn()">
+            <button class="btn btn-secondary" type="button" (click)="logout()">
+              LOGOUT
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="col-6 text-center">
+
+          <h1 class="product-title">Product Community Site</h1>
+
+        </div>-->
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <b>
+    <h1 class="text-center" style="font-size: 2rem; font-weight: bold">
+      Add Review
+    </h1>
+  </b>
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <!-- <h1 class="card-title text-center" style=" font-size: 2rem">Add Review</h1> -->
+
+            <form (submit)="addReview(addPostForm)" #addPostForm="ngForm">
+              <div class="form-group">
+                <label style="font-weight: bold" for="review" 
+                  >Product Code</label
+                >
+
+                <textarea
+                  class="form-control"
+                  id="productCode"
+                  placeholder="Code"
+                  required
+                  [(ngModel)]="productCode"
+                  name="productCode" readonly
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label style="font-weight: bold" for="review"
+                  >Product Name</label
+                >
+
+                <textarea
+                  class="form-control"
+                  id="productName"
+                  placeholder="Name"
+                  required
+                  [(ngModel)]="productName"
+                  name="productName" readonly
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label style="font-weight: bold" for="rating">Rating</label>
+
+                <select
+                  class="form-control"
+                  id="rating"
+                  [(ngModel)]="rating"
+                  name="rating"
+                >
+                  <option *ngFor="let option of ratingOptions" [value]="option">
+                    {{ option }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label style="font-weight: bold" for="review">Review</label>
+
+                <textarea
+                  class="form-control"
+                  id="review"
+                  placeholder="Post Content"
+                  required
+                  ngModel
+                  name="review"
+                ></textarea>
+              </div>
+
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-info mr-3">Add</button>
+
+                <button
+                  type="reset"
+                  class="btn btn-danger"
+                  routerLink="/searchProduct"
+                >
+                  Cancel
+                </button>
+              </div>
+
+              <form (ngSubmit)="addReview(form)" #form="ngForm">
+                <!-- Rest of your form code here -->
+              </form>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.header{
+    background-color: rgb(3, 3, 3);
+  }
+  .centered{
+      width: 70%;
+      margin: 30px auto;
+      text-align: justify;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      
+    }
+    .top-right{
+      margin-left: 65%;
+    }
+  
+    .body{
+      height: 100vh;
+     
+    }
+ 
+    .searchResult {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50vh;
+      }
+      
+      .searchResult h1 {
+        text-align: center;
+      }
+      
+      .table-container {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .custom-button {
+        font-size: 13px;
+        padding: 5px 9px;
+      }
+      
+
+      

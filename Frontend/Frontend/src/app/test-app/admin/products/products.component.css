@@ -1,0 +1,165 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-top: 50px;
+    overflow: auto; /* Enable scrolling */
+  }
+  
+  .card {
+    margin-left: 10px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-inner {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-header {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0; /* Updated */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .card-header:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .card-header h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .card-header:hover h3 {
+    color: #555;
+  }
+  
+  .card-header p {
+    font-size: 16px;
+    margin: 0;
+    color: #777;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .card-header:hover p {
+    color: #999;
+  }
+  
+  .card-body {
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+  }
+  
+  .card-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.nagarro.com/hubfs/Nagarro%20logo_new%20brand%20identity_for%20mobile-1.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    opacity: 0.9;
+    z-index: -1;
+  }
+  
+  .card-body p {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-body:hover p {
+    transform: translateY(-5px);
+  }
+  
+  @keyframes fade-in-text {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-header,
+  .card-footer {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card-footer {
+    padding: 10px;
+    text-align: right;
+  }
+  
+  .card-footer button {
+    background: linear-gradient(45deg, #dc3545 50%, #c82333 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-position 0.3s ease-in-out;
+  }
+  
+  .card-footer button:hover {
+    background-position: left bottom;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-container .card {
+    animation: fade-in 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  .addProduct button {
+    margin-right: 10px;
+    background: linear-gradient(45deg, #4285F4 50%, #36A2EB 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-position 0.3s ease-in-out;
+  }
+  
+  .addProduct button:hover {
+    background-position: left bottom;
+  }
+  

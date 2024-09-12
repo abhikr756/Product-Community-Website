@@ -1,0 +1,96 @@
+<body class="wallpaper">
+  <div class="header py-4" style="background-color: black; color: white; padding: 2rem;">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 text-left">
+          <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
+        </div>
+        
+        <div class="col-6 text-right">
+          <div *ngIf="loggedIn()">
+            <button class="btn btn-info" type="button" (click)="logout()">LOGOUT</button>
+          </div>
+        </div>
+        <!-- <div class="col-6 text-center">
+              <h1 class="product-title">Product Community Site</h1>
+            </div> -->
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="text-center">
+    <a style="font-weight: bold; font-size: 2rem;">Search for Products</a>
+  </div> <br>
+  <div class="box" *ngIf="loggedIn()">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+          <div class="input-group">
+            <input type="text" placeholder="Search the product" class="form-control search" (keyup)="OnInput($event)" />
+            <!-- <button class="btn btn-primary form-control search" (click)="showAllProducts()">All products</button> -->
+            <div class="input-group-append">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="searchResult py-5" *ngIf="searchedProducts().length > 0 ? showAllProducts:products && loggedIn()">
+    <div class="container">
+      <b>
+        <h1 class="text-center" style="font-size: 1.5rem; font-weight: bold;">PRODUCTS</h1>
+      </b>
+      <div class="card">
+        <div class="card-body">
+          <div class="text-end">
+            <div class="float-left">
+              <button class="btn btn-link" (click)="removeFilter()">
+                <img src="https://img.icons8.com/?size=1x&id=13903&format=png" height="30px" />
+              </button>
+            </div>
+            <div class="float-right">
+              <button *ngIf="currentUser().authorities[0].authority !== 'ADMIN'" class="btn btn-danger" (click)="requestForreview(searchedProducts()[0]?.productId)"
+                routerLink="requestReview" sytle="background-color: #4CAF50;">Request Review</button>
+            </div>
+
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-striped" style="margin-right:0px; margin-top:50px">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Brand</th>
+                  <th>Product Code</th>
+                  <th>Product Price</th>
+                  
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of searchedProducts()">
+                  <td>{{ p.productName }}</td>
+                  <td>{{ p.brand }}</td>
+                  <td>{{ p.productCode }}</td>
+                  <td>{{p.prodPrice}}</td>
+                  <td>
+                    <button *ngIf="currentUser().authorities[0].authority !== 'ADMIN'" class="mt-2" class="btn btn-success mr-2 btn-space custom-button" (click)="addReview(p.productId)" routerLink="addReview">Add
+                      Review</button>
+                    <button class="btn btn-warning mr-2 custom-button" (click)="showReview(p.productId)" routerLink="showReview">Show
+                      Reviews</button>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>     
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,97 @@
+<div class="body">
+  <div
+    class="header py-4"
+    style="background-color: black; color: white; padding: 2rem"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-6 text-left">
+          <button
+            class="btn btn-primary"
+            color="primary"
+            routerLink="/searchProduct"
+          >
+            Back to Search
+          </button>
+        </div>
+
+        <div class="col-6 text-right">
+          <div *ngIf="loggedIn()">
+            <button class="btn btn-info" type="button" (click)="logout()">
+              LOGOUT
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="col-6 text-center">
+
+          <h1 class="product-title">Product Community Site</h1>
+
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <div class="grid-container">
+    <h1 class="text-center" style="font-size: 2rem; font-weight: bold">
+      All Reviews
+    </h1>
+  </div>
+
+  <div>
+    <p style="font-weight: bold; color: rgb(85, 106, 4)" class="text-center">
+      Average Rating: {{ averageRating.toFixed(2) }}
+    </p>
+  </div>
+
+  <div class="centered" *ngFor="let r of review">
+    <div *ngIf="r.approved && r.approved != null">
+      <mat-card class="example-card">
+        <mat-card-title>{{ r.heading }}</mat-card-title>
+
+        <mat-toolbar style="min-height: 10px">
+          <div class="rating">
+            <div class="rating-stars">
+              <ng-container *ngFor="let item of getRatingItems(r.rating)">
+                <svg
+                  class="star"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="orange"
+                    d="M12 2.693l2.69 8.282h8.72l-7.048 5.12 2.69 8.282L12 18.966l-7.348 5.44 2.69-8.282L1.59 11.975h8.72z"
+                  />
+                </svg>
+              </ng-container>
+            </div>
+
+            <div
+              class="star"
+              [style.width]="getRatingPercentage(r.rating)"
+            ></div>
+          </div>
+        </mat-toolbar>
+
+        <mat-card-content style="min-height: 5px">
+          <div>
+            <p class="review-text"><b>Product Name:</b> {{ r.productName }}</p>
+
+            <p class="review-text"><b>Product Code:</b> {{ r.productCode }}</p>
+          </div>
+
+          <p>
+            <b>{{ r.review }}</b>
+          </p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button class="btn btn-info btn-space custom-button">LIKE</button>
+
+          <button class="btn btn-info custom-button">SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
